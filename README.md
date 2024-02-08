@@ -72,3 +72,38 @@ app.message = 'I have changed the data!'
    // 속성의 값을 거짓으로 업데이트하면 엘리먼트가 화면에서 사라진다.
    app2.seen = false
    ```
+
+   <br />
+
+1. 반복문
+
+   `v-for`
+
+   ```html
+   <!-- index.html -->
+
+   <div id="app3">
+     <ol>
+       <!-- todos 배열을 순서대로 반복하여 todo라는 item에 담는다. -->
+       <li v-for="todo in todos">{{ todo.text }}</li>
+     </ol>
+   </div>
+   ```
+
+   ```javascript
+   /* index.js */
+
+   var app3 = new Vue({
+     el: '#app3',
+     data: {
+       todos: [
+         { text: 'Learn JavaScript' },
+         { text: 'Learn Vue' },
+         { text: 'Build something awesome' },
+       ],
+     },
+   })
+
+   // 배열의 값을 추가하면 화면 상에도 리스트가 바로 생성된다.
+   app3.todos.push({ text: 'New item' })
+   ```
