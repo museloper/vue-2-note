@@ -195,3 +195,43 @@ var app6 = new Vue({
   el: '#app6',
 })
 ```
+
+위와 같이 작성된 코드는 `todo-item` 컴포넌트를 사용할 때 마다 똑같은 텍스트를 렌더링할 뿐이다.
+
+아래와 같이 코드를 수정해보자.
+
+```html
+<!-- index.html -->
+
+<div id="app7">
+  <ol>
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></todo-item>
+  </ol>
+</div>
+```
+
+```javascript
+/* index.js */
+
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>',
+})
+
+var app7 = new Vue({
+  el: '#app7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'Vegetables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Whatever else humans are supposed to eat' },
+    ],
+  },
+})
+```
+
+이렇게 작성된 코드는 `v-bind`를 사용하여 각각의 반복되는 `todo-item` 컴포넌트에 각각의 다른 값들을 부여할 수 있다.
