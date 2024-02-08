@@ -107,3 +107,35 @@ app.message = 'I have changed the data!'
    // 배열의 값을 추가하면 화면 상에도 리스트가 바로 생성된다.
    app3.todos.push({ text: 'New item' })
    ```
+
+   <br />
+
+1. 이벤트
+
+   `v-on`
+
+   ```html
+   <!-- index.html -->
+
+   <div id="app4">
+     <p>{{ message }}</p>
+     <!-- click 이벤트 발생 시 reverseMessage 메소드 호출 -->
+     <button v-on:click="reverseMessage">Reverse Message</button>
+   </div>
+   ```
+
+   ```javascript
+   /* index.js */
+
+   var app4 = new Vue({
+     el: '#app4',
+     data: {
+       message: 'Hello Vue.js!',
+     },
+     methods: {
+       reverseMessage: function () {
+         this.message = this.message.split('').reverse().join('')
+       },
+     },
+   })
+   ```
