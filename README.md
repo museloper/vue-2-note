@@ -37,3 +37,38 @@ var app = new Vue({
 // Vue 객체의 값을 업데이트하면 화면의 값이 바뀌는 것을 확인할 수 있다. 아마 즉각즉각 랜더링 하는 방식인 듯 하다.
 app.message = 'I have changed the data!'
 ```
+
+<br />
+
+### 디렉티브
+
+디렉티브는 Vue에서 제공하는 특수 속성임을 나타내는 `v-` 접두어가 붙어있으며 사용자가 짐작할 수 있듯 렌더링 된 DOM에 특수한 반응형 동작을 한다.
+
+<br />
+
+1. 조건문
+
+   `v-if`
+
+   ```html
+   <!-- index.html -->
+
+   <div id="app2">
+     <!-- 속성의 값이 참일 때 엘리먼트가 표시된다. -->
+     <span v-if="seen">Now you see me</span>
+   </div>
+   ```
+
+   ```javascript
+   /* index.js */
+
+   var app2 = new Vue({
+     el: '#app2',
+     data: {
+       seen: true,
+     },
+   })
+
+   // 속성의 값을 거짓으로 업데이트하면 엘리먼트가 화면에서 사라진다.
+   app2.seen = false
+   ```
