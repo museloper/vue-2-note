@@ -166,3 +166,32 @@ app.message = 'I have changed the data!'
      },
    })
    ```
+
+<br />
+
+### 컴포넌트
+
+```html
+<!-- index.html -->
+
+<div id="app6">
+  <ol>
+    <!-- todo-item 컴포넌트 사용 -->
+    <todo-item></todo-item>
+    <todo-item></todo-item>
+  </ol>
+</div>
+```
+
+```javascript
+/* index.js */
+
+// todo-item 컴포넌트 정의
+Vue.component('todo-item', {
+  template: '<li>This is a todo</li>',
+})
+
+var app6 = new Vue({
+  el: '#app6',
+})
+```
