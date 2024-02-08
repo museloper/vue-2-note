@@ -139,3 +139,30 @@ app.message = 'I have changed the data!'
      },
    })
    ```
+
+   <br />
+
+1. 데이터 양방향 바인딩
+
+   `v-model`
+
+   ```html
+   <!-- index.html -->
+
+   <div id="app5">
+     <p>{{ message }}</p>
+     <!-- 사용자 입력에 의해 Vue 앱의 데이터가 실시간으로 업데이트된다. -->
+     <input type="text" v-model="message" />
+   </div>
+   ```
+
+   ```javascript
+   /* index.js */
+
+   var app5 = new Vue({
+     el: '#app5',
+     data: {
+       message: 'Hello Vue',
+     },
+   })
+   ```
